@@ -7,6 +7,7 @@ class Solution {
     public int solution(int n, int[][] edge) {
         int answer = 0;
         int[] distance = new int[n+1];
+        boolean[] visited = new boolean[n+1];
         for(int i=2;i<=n;i++) {
         	distance[i]=1111111111;
         }
@@ -21,7 +22,9 @@ class Solution {
         	for(int nei:neighbor) {
         		if(distance[nei]>temp) {
         			distance[nei]=temp;
-        			queue.add(nei);
+        			if(!visited[nei]) {
+        				queue.add(nei);        				
+        			}
         		}
         	}
         }
