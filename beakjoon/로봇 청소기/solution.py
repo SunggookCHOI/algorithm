@@ -40,28 +40,24 @@ while checker:
             present = [present[0],present[1]-1]
             direction = 3
             done+=1
-            continue
         #남쪽 청소
         elif check_south(present):
             maps[present[0]+1][present[1]] = 2
             present = [present[0]+1,present[1]]
             direction = 2
             done+=1
-            continue
         #동
         elif check_east(present):
             maps[present[0]][present[1]+1] = 2
             present = [present[0],present[1]+1]
             direction = 1
             done+=1
-            continue
         #북
         elif check_north(present):
             maps[present[0]-1][present[1]] = 2
             present = [present[0]-1,present[1]]
             direction = 0
             done+=1
-            continue
         else :
             if present[0]+1==n or maps[present[0]+1][present[1]] ==1:
                 checker = False
@@ -76,28 +72,24 @@ while checker:
             present = [present[0]+1,present[1]]
             direction = 2
             done+=1
-            continue
         #동
         elif check_east(present):
             maps[present[0]][present[1]+1] = 2
             present = [present[0],present[1]+1]
             direction = 1
             done+=1
-            continue
         #북
         elif check_north(present):
             maps[present[0]-1][present[1]] = 2
             present = [present[0]-1,present[1]]
             direction = 0
             done+=1
-            continue
         #서쪽 청소
         elif check_west(present):
             maps[present[0]][present[1]-1] = 2
             present = [present[0],present[1]-1]
             direction = 3
             done+=1
-            continue
         else :
             if present[1]+1==m or maps[present[0]][present[1]+1] ==1:
                 checker = False
@@ -111,28 +103,24 @@ while checker:
             present = [present[0],present[1]+1]
             direction = 1
             done+=1
-            continue
         #북
         elif check_north(present):
             maps[present[0]-1][present[1]] = 2
             present = [present[0]-1,present[1]]
             direction = 0
             done+=1
-            continue
         #서쪽 청소
         elif check_west(present):
             maps[present[0]][present[1]-1] = 2
             present = [present[0],present[1]-1]
             direction = 3
             done+=1
-            continue
         #남쪽 청소
         elif check_south(present):
             maps[present[0]+1][present[1]] = 2
             present = [present[0]+1,present[1]]
             direction = 2
             done+=1
-            continue
         else :
             if present[0]-1==-1 or maps[present[0]-1][present[1]] ==1:
                 checker = False
@@ -147,28 +135,24 @@ while checker:
             present = [present[0]-1,present[1]]
             direction = 0
             done+=1
-            continue
         #서쪽 청소
         elif check_west(present):
             maps[present[0]][present[1]-1] = 2
             present = [present[0],present[1]-1]
             direction = 3
             done+=1
-            continue
         #남쪽 청소
         elif check_south(present):
             maps[present[0]+1][present[1]] = 2
             present = [present[0]+1,present[1]]
             direction = 2
             done+=1
-            continue
         #동
         elif check_east(present):
             maps[present[0]][present[1]+1] = 2
             present = [present[0],present[1]+1]
             direction = 1
             done+=1
-            continue
         else :
             if present[1]-1==-1 or maps[present[0]][present[1]-1] ==1:
                 checker = False
