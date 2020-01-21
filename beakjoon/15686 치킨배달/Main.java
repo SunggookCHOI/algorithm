@@ -18,15 +18,6 @@ class Main {
 		}
 	}
 	
-	public static boolean contains(int[][] selected, int[] target) {
-		for(int[] s:selected) {
-			if(s.equals(target)) {
-				return true;
-			}
-		}
-		return false;
-	}
-	
 	public static void calDistance(ArrayList<int[]> home, int[][] selected) {
 		int ans = 0;
 		int[] distance = new int[home.size()];
