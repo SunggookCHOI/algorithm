@@ -6,14 +6,16 @@ import java.util.StringTokenizer;
 
 class Main {
 	static int answer = 99999999;
+	static ArrayList<int[]> home=new ArrayList<>();
+	static ArrayList<int[]> chicken=new ArrayList<>();
 	
-	public static void select(int m, int depth, int lastIdx, ArrayList<int[]> home, ArrayList<int[]> chicken, int[][] selected) {
+	public static void select(int m, int depth, int lastIdx, int[][] selected) {
 		if(depth==m) {
 			calDistance(home,selected);
 		}else {
 			for(int i=lastIdx; i<chicken.size(); i++) {
 				selected[depth] = chicken.get(i);
-				select(m,depth+1,i+1,home,chicken,selected);
+				select(m,depth+1,i+1,selected);
 			}
 		}
 	}
@@ -46,8 +48,6 @@ class Main {
     	StringTokenizer st = new StringTokenizer(br.readLine());
     	int n = Integer.parseInt(st.nextToken());
     	int m = Integer.parseInt(st.nextToken());
-    	ArrayList<int[]> home = new ArrayList<>();
-    	ArrayList<int[]> chicken = new ArrayList<>();
     	for(int i=0;i<n;i++) {
     		st = new StringTokenizer(br.readLine());
     		for(int j=0;j<n;j++) {
@@ -59,7 +59,7 @@ class Main {
     			}
     		}
     	}
-    	select(m, 0,0, home, chicken, new int[m][2]);
+    	select(m, 0,0, new int[m][2]);
     	System.out.println(answer);
 	}
 }
