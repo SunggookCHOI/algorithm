@@ -1,10 +1,10 @@
 class Solution {
+	
 	static int answer = 0;
 	static int combi = 0;
+	
     public int solution(int n) {
         int[] coord = new int[n];
-        
-        combi = combination(n);
         
         for(int i=0; i<n ; i++) {
         	coord[0] = i;
@@ -45,17 +45,4 @@ class Solution {
     		return true;
     	}
     }
-    
-    public int factorial(int n) {
-    	int answer = 1;
-    	for(int i = 1; i <= n ; i++) {
-    		answer=answer*i;
-    	}
-    	return answer;
-    }
-    
-    public int combination(int n) {
-    	return factorial(n)/(2*factorial(n-2));
-    }
-    
 }
