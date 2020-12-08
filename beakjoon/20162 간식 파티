@@ -1,0 +1,30 @@
+# https://www.acmicpc.net/problem/20162
+
+import sys
+readline = sys.stdin.readline
+
+def main(n):
+    nth = int(readline())
+    #n 번째 음식의 만족도
+    dp = [nth]
+    #n 번째 음식을 먹었을 때의 만족도의 최댓값
+    dp2 = [nth]
+
+    for _ in range(n-1):
+        nth = int(readline())
+        # 앞의 음식 중 먹을 수 있는 음식들을 먹었을 때의 만족도의 최댓값들
+        tmp = []
+        for i,v in enumerate(dp):
+            if v < nth:
+                tmp.append(dp2[i])
+        dp.append(nth)
+        if tmp:
+            dp2.append(max(tmp)+nth)
+        # 먹을 수 있는 게 없으면, 이번 음식만 먹는 것이 최댓값
+        else:
+            dp2.append(nth)
+    print(max(dp2))
+
+if __name__ == '__main__':
+    n =int(readline())
+    main(n)
