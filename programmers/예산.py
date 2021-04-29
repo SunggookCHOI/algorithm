@@ -6,3 +6,16 @@ def solution(d, budget):
         i += 1
     
     return min(i,l)
+
+
+# sol2
+def solution(d, budget):
+    if sum(d) <= budget:
+        return len(d)
+    for i,v in enumerate(sorted(d)):
+        if budget >= v :
+            budget -= v
+        else :
+            return i
+    
+    return i
